@@ -40,4 +40,15 @@ var ajaxUpload = new AjaxUpload({
 			
 ````
 
+You are free to use [jQuery](http://jquery.com) as a selector. But please be aware that the `AjaxUpload` require DOM Element so you have to use `.get()` method as documented [here](http://api.jquery.com/jquery.get/) like this:
+
+```javascript
+var ajaxUpload = new AjaxUpload({
+	uploadUrl:'fileUpload.php', 
+	inputFile: uploader.find('.input-file').first().get(0), 
+	progressBar: uploader.find('.progress-bar').first().get(0), 
+	fileKey: 'myFile',
+	params: {name: uploader.find('.input-file').attr('name')}
+})		
+```
 Check the example and the [demo here](http://crosscode.tk/yajaxupload/example/)
