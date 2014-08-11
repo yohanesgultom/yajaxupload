@@ -26,11 +26,9 @@
 				uploadUrl:'fileUpload.php', 
 				inputFile: uploader.querySelector('.input-file'), 
 				progressBar: uploader.querySelector('.progress-bar'), 
-				fileKey: 'myFile'
+				fileKey: 'myFile',
 				params: {name: uploader.querySelector('.input-file').getAttribute('name')}
 			})			
-
-			// on complete handler
 			.onComplete(function(res) {
 				if (res.success == true) {
 					// show uploaded image
