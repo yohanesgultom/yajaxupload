@@ -1,15 +1,26 @@
-jQuery.AjaxUpload
+yAJAXUpload
 =================
 
-Super simple ajax file upload using jquery and html5 xhr upload inspired by [http://kwanlae.wordpress.com/2012/02/15/file-upload-using-html5-form-javascript-jquery-express-node-js] (http://kwanlae.wordpress.com/2012/02/15/file-upload-using-html5-form-javascript-jquery-express-node-js/)
+Super simple HTML5 AJAX file upload XHR with progress bar inspired by [kwanlae blog](http://kwanlae.wordpress.com/2012/02/15/file-upload-using-html5-form-javascript-jquery-express-node-js/)
+
+Requirement
+-----------
+
+HTML5 compliant browser. You can [test it here](http://html5test.com/)
 
 Usage
 -----
 
-Include jQuery and jQuery.AjaxUpload js and instantiate `AjaxUpload` object for each file input control
+Include yAJAXUpload js file. Yes, no other dependency as it uses javascript DOM api
+
+```html
+<script src="../dist/jquery.ajaxupload.js"></script>
+```
+
+Create `AjaxUpload` object for **each file input control** :
 
 ```javascript
-var b=new AjaxUpload({
+var a = new AjaxUpload({
 	uploadUrl:"fileUpload.php", // upload url
 	inputFile:$("#inputFile") // file input element
 	progressBar:$("#progess"), // bootstrap progress bar jquery element
