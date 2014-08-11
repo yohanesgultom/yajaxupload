@@ -1,18 +1,18 @@
 <html>
 <head>
 	<title>AjaxUpload Example</title>	
-	<!--<script src="../dist/jquery.ajaxupload.min.js"></script>-->
-	<script src="../dist/jquery.ajaxupload.js"></script>
+	<!--<script src="../dist/yajaxupload.min.js"></script>-->
+	<script src="../dist/yajaxupload.js"></script>
 </head>
 <body>	
 	<h1>AjaxUpload Example</h1>
 	<div class="uploader">						
-		<input type='file' class="input-file"/>
+		<input type='file' name="file1" class="input-file"/>
    	<button class="btn btn-upload" onclick="upload(this)">Upload</button>
     <div class="progress" style="width:400px;">
 				<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="background-color:#000;color:#fff;"></div>     				   			
 			</div>
-			<img class="uploaded-image" src=""/>  			
+			<div class="response"></div>
 	</div>
 	<script>		
 
@@ -27,13 +27,14 @@
 				inputFile: uploader.querySelector('.input-file'), 
 				progressBar: uploader.querySelector('.progress-bar'), 
 				fileKey: 'myFile'
-			})
+				params: {name: uploader.querySelector('.input-file').getAttribute('name')}
+			})			
 
 			// on complete handler
 			.onComplete(function(res) {
 				if (res.success == true) {
 					// show uploaded image
-					uploader.querySelector('.uploaded-image').setAttribute('src', res.path);				
+					uploader.querySelector('.response').innerHTML = JSON.stringify(res);				
 				} else {
 					// alert the error
 					uploader.querySelector('.progress-bar').style.width = '0%';

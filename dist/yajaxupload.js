@@ -18,7 +18,7 @@ function AjaxUpload(map) {
     this.inputFile = map.inputFile;    
     this.progressBar = map.progressBar;
     this.fileKey = (map.fileKey) ? map.fileKey : 'uploadingFile';
-    this.params = map.params;
+    this.params = (map.params) ? map.params : {};
     
     this.percentage = 0;
     this.percentageWidth = '0%';
@@ -45,8 +45,10 @@ function AjaxUpload(map) {
 
             var fd = new FormData();
             fd.append(that.fileKey, file);
-            fd.append(that.dateKey, (new Date()).toString());
-            fd.append(that.commentKey, that.comment);
+            // add additional params            
+            for (k in that.params) {
+                fd.append(k, that.params[k]);
+            }
          
             var xhr = new XMLHttpRequest();
             var res;
