@@ -2,6 +2,8 @@ yAJAXUpload
 =================
 Super simple HTML5 AJAX file upload XHR with progress bar inspired by [kwanlae blog](http://kwanlae.wordpress.com/2012/02/15/file-upload-using-html5-form-javascript-jquery-express-node-js/)
 
+Check the example and the [demo here](http://liveapp.ga/yajaxupload/example/)
+
 Requirement
 -----------
 HTML5 compliant browser. You can [test it here](http://html5test.com/)
@@ -51,4 +53,3 @@ var ajaxUpload = new AjaxUpload({
 	params: {name: uploader.find('.input-file').attr('name')}
 })		
 ```
-Check the example and the [demo here](http://crosscode.tk/yajaxupload/example/)
